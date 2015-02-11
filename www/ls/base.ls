@@ -25,8 +25,8 @@ layers =
   ["snatky_sezdani"  "Sezdaní" "sezdaných" "u112103102"]
   ["snatky_ovdoveli" "Ovdovělí" "ovdovělých" "u112103302"]
   ["snatky_rozvedeni" "Rozvedení" "rozvedených" "u112103202"]
+  ["snatky_vek"      "Průměrný věk" "průměrný věk" "u112102801"]
   # ["snatky_verici"   "Věřící" "vozidel" "celkem"]
-  # ["snatky_vek"      "aaaaaaa" "malých motocyklů" "malymotocykl"]
 
 
 layers_assoc = {}
@@ -74,7 +74,10 @@ map.on \click (evt) ->
   num = Math.round rate / 100 * total
 
   text = "<b>#{properties.nazob}</b><br>"
-  text += "V této obci žije <b>#{ig.utils.formatNumber rate, 2} % #{currentMeta.2}</b><br>(#{num} z #{ig.utils.formatNumber total}</b> obyvatel)"
+  if currentMeta.0 == "snatky_vek"
+    text += "Průměrný věk v této obci je <b>#{ig.utils.formatNumber rate, 2} let"
+  else
+    text += "V této obci žije <b>#{ig.utils.formatNumber rate, 2} % #{currentMeta.2}</b><br>(#{num} z #{ig.utils.formatNumber total}</b> obyvatel)"
   popup
     ..setLatLng evt.latlng
     ..setContent text
