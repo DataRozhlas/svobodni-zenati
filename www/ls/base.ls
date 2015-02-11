@@ -23,8 +23,8 @@ labelLayer = L.tileLayer do
 layers =
   ["snatky_svobodni" "Svobodní" "svobodných" "u112103002"]
   ["snatky_sezdani"  "Sezdaní" "sezdaných" "u112103102"]
-  ["snatky_ovdoveli" "Ovdovělí" "ovdovělých" "u112103302"]
   ["snatky_rozvedeni" "Rozvedení" "rozvedených" "u112103202"]
+  ["snatky_ovdoveli" "Ovdovělí" "ovdovělých" "u112103302"]
   ["snatky_vek"      "Průměrný věk" "průměrný věk" "u112102801"]
   # ["snatky_verici"   "Věřící" "vozidel" "celkem"]
 
